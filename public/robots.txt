@@ -29,7 +29,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location (update with your actual domain)
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://arduino-ide-ai.vercel.app/sitemap.xml
 
 # Crawl delay to prevent server overload
 Crawl-delay: 1
