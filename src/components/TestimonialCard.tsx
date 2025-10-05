@@ -6,16 +6,23 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
   return (
-    <div className="bg-card glass-effect rounded-xl p-8 shadow-lg hover:shadow-[var(--shadow-elevated)] transition-all duration-300 border">
-      <div className="text-5xl text-primary mb-4 opacity-20">"</div>
-      <p className="text-foreground italic mb-6 leading-relaxed">{quote}</p>
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
-          {author[0]}
-        </div>
-        <div>
-          <div className="font-bold text-foreground">{author}</div>
-          <div className="text-sm text-muted-foreground">{role}</div>
+    <div className="glass-card rounded-2xl p-8 hover:shadow-[var(--shadow-elevated)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden group">
+      {/* Subtle gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+      
+      <div className="relative z-10">
+        <div className="text-6xl text-primary/30 mb-4 font-serif leading-none">"</div>
+        <p className="text-foreground/90 italic mb-6 leading-relaxed text-lg">
+          {quote}
+        </p>
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">
+            {author[0]}
+          </div>
+          <div>
+            <div className="font-bold text-foreground text-lg">{author}</div>
+            <div className="text-sm text-foreground/60">{role}</div>
+          </div>
         </div>
       </div>
     </div>

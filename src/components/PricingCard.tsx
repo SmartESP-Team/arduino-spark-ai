@@ -21,20 +21,20 @@ export default function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className={`relative bg-card glass-effect rounded-2xl p-8 shadow-xl border-2 transition-all duration-300 ${
+      className={`relative glass-card rounded-3xl p-10 transition-all duration-500 ${
         isPrimary
-          ? "border-primary scale-105 shadow-[var(--shadow-elevated)]"
-          : "border-border hover:border-primary/50"
-      } ${isSoldOut ? "opacity-75" : ""}`}
+          ? "scale-105 shadow-[var(--shadow-glow)] ring-2 ring-primary/30"
+          : "hover:scale-[1.02] hover:shadow-[var(--shadow-elevated)]"
+      } ${isSoldOut ? "opacity-60" : ""}`}
     >
       {isSoldOut && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-destructive text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 glass-effect px-6 py-2 rounded-full text-sm font-bold shadow-lg text-destructive ring-2 ring-destructive/20">
           SOLD OUT
         </div>
       )}
       {isPrimary && !isSoldOut && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-          MOST POPULAR
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-2 rounded-full text-sm font-bold shadow-[var(--shadow-glow)] animate-glow">
+          ⚡ MOST POPULAR
         </div>
       )}
 

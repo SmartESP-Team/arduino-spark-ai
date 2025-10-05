@@ -77,33 +77,33 @@ export default function CodeEditor() {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="bg-[hsl(var(--code-bg))] rounded-lg overflow-hidden shadow-2xl border border-gray-700">
+      <div className="glass-hero rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] border-2 border-white/20">
         {/* Menu bar */}
-        <div className="bg-[#2d2d2d] px-4 py-2 flex items-center gap-4 text-xs text-gray-400 border-b border-gray-700">
-          <span className="hover:text-white cursor-pointer transition-colors">File</span>
-          <span className="hover:text-white cursor-pointer transition-colors">Edit</span>
-          <span className="hover:text-white cursor-pointer transition-colors">Sketch</span>
-          <span className="hover:text-white cursor-pointer transition-colors">Tools</span>
-          <span className="hover:text-white cursor-pointer transition-colors">Help</span>
+        <div className="glass-effect px-6 py-3 flex items-center gap-6 text-xs font-semibold text-foreground/80 border-b border-white/10">
+          <span className="hover:text-primary cursor-pointer transition-colors">File</span>
+          <span className="hover:text-primary cursor-pointer transition-colors">Edit</span>
+          <span className="hover:text-primary cursor-pointer transition-colors">Sketch</span>
+          <span className="hover:text-primary cursor-pointer transition-colors">Tools</span>
+          <span className="hover:text-primary cursor-pointer transition-colors">Help</span>
         </div>
 
         {/* Toolbar */}
-        <div className="bg-[#393939] px-4 py-2 flex items-center gap-3 border-b border-gray-700">
-          <button className="w-8 h-8 rounded bg-primary hover:bg-primary/80 transition-colors flex items-center justify-center text-white text-xs font-bold">
+        <div className="glass-card px-6 py-3 flex items-center gap-4 border-b border-white/10">
+          <button className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-primary/80 hover:scale-105 transition-all shadow-md flex items-center justify-center text-white text-xs font-bold">
             ✓
           </button>
-          <button className="w-8 h-8 rounded bg-secondary hover:bg-secondary/80 transition-colors flex items-center justify-center text-white text-xs font-bold">
+          <button className="w-9 h-9 rounded-lg bg-gradient-to-br from-secondary to-secondary/80 hover:scale-105 transition-all shadow-md flex items-center justify-center text-white text-xs font-bold">
             →
           </button>
-          <div className="h-6 w-px bg-gray-600 mx-1" />
-          <div className="text-xs text-gray-400">Arduino Uno on COM3</div>
+          <div className="h-6 w-px bg-border/30 mx-1" />
+          <div className="text-xs font-medium text-foreground/70">Arduino Uno on COM3</div>
         </div>
 
         {/* Code area */}
-        <div className="relative">
+        <div className="relative bg-[hsl(var(--code-bg))]/80 backdrop-blur-sm">
           <div className="flex">
             {/* Line numbers */}
-            <div className="bg-[#2d2d2d] px-4 py-6 text-right text-gray-500 text-sm font-mono select-none border-r border-gray-700">
+            <div className="bg-black/20 px-4 py-6 text-right text-gray-400 text-sm font-mono select-none border-r border-white/5">
               {displayedCode.split("\n").map((_, i) => (
                 <div key={i} className="leading-6">{i + 1}</div>
               ))}
@@ -118,16 +118,16 @@ export default function CodeEditor() {
                   
                   return (
                     <div key={i} className="relative">
-                      <span className={hasError ? "bg-red-900/30 px-1" : ""}>
+                      <span className={hasError ? "bg-red-500/20 px-1 rounded" : ""}>
                         {highlightSyntax(line)}
                       </span>
                       {hasError && (
-                        <span className="text-red-500 text-xs ml-2 animate-pulse">
+                        <span className="text-red-400 text-xs ml-2 animate-pulse font-semibold">
                           {i === 1 ? "⚠ Missing semicolon" : "⚠ Undeclared function"}
                         </span>
                       )}
                       {isFixed && (
-                        <span className="text-accent text-xs ml-2 animate-fade-in">
+                        <span className="text-accent text-xs ml-2 animate-fade-in font-semibold">
                           ✓
                         </span>
                       )}
@@ -137,18 +137,18 @@ export default function CodeEditor() {
               </pre>
 
               {showAnalyzing && (
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/90 backdrop-blur-sm px-6 py-4 rounded-lg shadow-2xl animate-glow">
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span className="text-white font-semibold">AI Analyzing Code...</span>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-hero px-8 py-5 rounded-2xl shadow-[var(--shadow-glow)] animate-glow">
+                  <div className="flex items-center gap-4">
+                    <div className="w-7 h-7 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+                    <span className="text-foreground font-bold text-lg">AI Analyzing Code...</span>
                   </div>
                 </div>
               )}
 
               {showExplanation && (
-                <div className="absolute bottom-4 right-4 bg-accent text-white px-4 py-3 rounded-lg shadow-xl max-w-xs animate-slide-in-right text-xs">
-                  <div className="font-bold mb-1">✓ Code Fixed!</div>
-                  <div className="opacity-90">
+                <div className="absolute bottom-4 right-4 glass-card px-5 py-4 rounded-2xl shadow-xl max-w-xs animate-slide-in-right text-xs border border-accent/30">
+                  <div className="font-bold mb-2 text-accent text-sm">✓ Code Fixed!</div>
+                  <div className="text-foreground/80 space-y-1 leading-relaxed">
                     • Added missing semicolon after pinMode<br />
                     • Fixed typo: digita1Write → digitalWrite<br />
                     • Tip: digitalWrite controls digital pins
@@ -160,15 +160,15 @@ export default function CodeEditor() {
         </div>
 
         {/* Console */}
-        <div className="bg-black text-white px-4 py-3 text-xs font-mono border-t border-gray-700">
+        <div className="bg-black/60 backdrop-blur-sm text-white px-6 py-4 text-xs font-mono border-t border-white/5">
           {showErrors && !showFixed && (
-            <div className="text-red-400">
+            <div className="text-red-400 space-y-1">
               <div>error: expected &apos;;&apos; before &apos;{`{`}&apos;  token</div>
               <div>error: &apos;digita1Write&apos; was not declared in this scope</div>
             </div>
           )}
           {showFixed && (
-            <div className="text-accent">
+            <div className="text-accent font-semibold">
               ✓ Compilation successful. Upload ready.
             </div>
           )}

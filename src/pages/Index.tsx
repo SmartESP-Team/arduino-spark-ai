@@ -18,28 +18,50 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
-      {/* Particle Background */}
+    <div className="min-h-screen bg-background overflow-hidden relative">
+      {/* Futuristic Glass Mesh Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-background to-primary/5" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+        
+        {/* Animated orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-40 right-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute bottom-40 left-1/3 w-72 h-72 bg-accent/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+        
+        {/* Grid overlay for depth */}
+        <div className="absolute inset-0 opacity-[0.02]" 
+          style={{
+            backgroundImage: 'linear-gradient(hsl(220 20% 10%) 1px, transparent 1px), linear-gradient(90deg, hsl(220 20% 10%) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }} 
+        />
       </div>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-20 pb-32">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-block bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-md">
-            WORKS SEAMLESSLY WITH ARDUINO IDE • 100% FREE • INSTANT ACCESS
+          <div className="inline-flex items-center gap-2 glass-effect px-6 py-3 rounded-full text-sm font-bold mb-8 animate-glow">
+            <span className="text-accent">●</span>
+            <span className="text-foreground">DON'T GET LEFT BEHIND IN THE AI REVOLUTION</span>
+            <span className="text-accent">●</span>
           </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your AI-Powered Arduino Coding Assistant.
+            <span className="text-foreground">Master Arduino Development</span>
             <br />
-            <span className="text-gradient">Code Faster. Debug Smarter. Build Better.</span>
+            <span className="text-gradient">With Your AI-Powered Learning Companion</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            Arduino Assistant Coding integrates directly with Arduino IDE to instantly fix bugs, optimize code, and provide expert explanations — helping thousands of developers from hobbyists to professionals accelerate their projects.
+          
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <span className="font-semibold text-foreground">Stay ahead in a fast-evolving tech world.</span> Arduino Assistant Coding doesn't just fix your code—it empowers you to <span className="text-primary font-semibold">learn faster</span>, <span className="text-secondary font-semibold">build smarter</span>, and <span className="text-accent font-semibold">grow continuously</span>. Join thousands who've unlocked their full potential.
           </p>
+          
+          <div className="inline-block glass-card px-6 py-3 rounded-2xl mb-12">
+            <p className="text-sm font-semibold text-foreground">
+              ✓ Works with Arduino IDE • ✓ Instant AI Analysis • ✓ Learn While You Code
+            </p>
+          </div>
         </div>
 
         {/* Code Editor Simulation */}
@@ -68,12 +90,14 @@ export default function Index() {
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          Why Arduino Developers <span className="text-gradient">Choose It</span>
-        </h2>
-        <p className="text-center text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Fully compatible with Arduino IDE — works alongside your existing workflow without disrupting your development process
-        </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-foreground">Empower Your</span> <span className="text-gradient">Growth Journey</span>
+          </h2>
+          <p className="text-xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
+            Technology moves fast—but you don't have to struggle alone. Arduino Assistant Coding <span className="font-semibold text-primary">accelerates your learning</span>, helping you adapt, evolve, and <span className="font-semibold text-accent">stay relevant</span> in the AI-powered future.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
             emoji="🔌"
@@ -125,12 +149,17 @@ export default function Index() {
 
       {/* Video Section */}
       <section className="container mx-auto px-4 py-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-          See It <span className="text-gradient">In Action</span>
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            See <span className="text-gradient">Real Growth</span> In Action
+          </h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            Watch how Arduino Assistant Coding transforms confusion into clarity—empowering you to learn, adapt, and thrive in the AI era.
+          </p>
+        </div>
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border-4 border-primary/20">
-            <div className="aspect-video">
+          <div className="glass-card rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] p-2">
+            <div className="aspect-video rounded-2xl overflow-hidden">
               <YouTubeFacade 
                 videoId="NITh5km9cD4" 
                 title="Arduino IDE Helper Tutorial - Learn how to use the AI-powered assistant" 
@@ -142,12 +171,14 @@ export default function Index() {
 
       {/* Pricing Section */}
       <section className="container mx-auto px-4 py-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-          Choose Your <span className="text-gradient">Plan</span>
-        </h2>
-        <p className="text-xl text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          Join 5,000+ Arduino developers worldwide who've accelerated their projects with AI-powered assistance
-        </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-foreground">Start Your</span> <span className="text-gradient">Growth Journey</span>
+          </h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            Join <span className="font-semibold text-primary">5,000+ developers</span> who refuse to be left behind. Embrace AI-powered learning and <span className="font-semibold text-accent">unlock your full potential</span> today.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <PricingCard
             title="Free Forever"
@@ -194,9 +225,14 @@ export default function Index() {
 
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 py-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          What <span className="text-gradient">Makers Say</span>
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-foreground">Real Stories,</span> <span className="text-gradient">Real Growth</span>
+          </h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            Discover how developers are staying ahead and <span className="font-semibold text-primary">leveling up their skills</span> with AI-powered learning.
+          </p>
+        </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <TestimonialCard
             quote="As a professional IoT developer, this tool has cut my debugging time in half. The Arduino IDE integration is seamless and the AI explanations are spot-on."
@@ -218,44 +254,61 @@ export default function Index() {
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-4 py-32">
-        <div className="max-w-4xl mx-auto text-center bg-gradient-to-br from-primary to-secondary rounded-3xl p-12 shadow-[var(--shadow-elevated)] text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Every Arduino Developer Deserves an AI Assistant
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Arduino Assistant Coding isn't about replacing your skills — it's about amplifying them. Debug faster, learn deeper, and build production-ready projects with confidence. Works seamlessly with Arduino IDE.
-          </p>
-          <Button
-            onClick={handleDownload}
-            size="lg"
-            className="bg-white text-primary hover:bg-white/90 px-10 py-7 text-xl font-bold rounded-xl shadow-2xl hover:scale-105 transition-all duration-300"
-          >
-            Download Arduino Assistant Coding — Free Forever
-          </Button>
-          <p className="text-sm mt-6 opacity-75">
-            Quick email registration • Arduino IDE compatible • Internet connection required • Created by IOT4YOU2
-          </p>
+        <div className="max-w-5xl mx-auto text-center glass-hero rounded-[2rem] p-12 md:p-16 relative overflow-hidden">
+          {/* Background glow effect */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/30 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/30 rounded-full blur-3xl" />
+          
+          <div className="relative z-10">
+            <div className="inline-block glass-effect px-6 py-2 rounded-full text-sm font-bold mb-6 text-accent">
+              THE FUTURE WAITS FOR NO ONE
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+              Don't Get Left Behind.<br />
+              <span className="text-gradient">Start Growing Today.</span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl mb-10 text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Technology evolves rapidly—AI is here to help you <span className="font-semibold text-primary">keep pace</span>, <span className="font-semibold text-secondary">learn continuously</span>, and <span className="font-semibold text-accent">build confidently</span>. Arduino Assistant Coding amplifies your potential, so you stay ahead in an AI-driven world.
+            </p>
+            
+            <Button
+              onClick={handleDownload}
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 px-12 py-8 text-xl font-bold rounded-2xl shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300"
+            >
+              Download Free Now — Unlock Your Potential
+            </Button>
+            
+            <p className="text-sm mt-8 text-muted-foreground">
+              ✓ No credit card • ✓ Lifetime access • ✓ Arduino IDE compatible • ✓ Join 5,000+ developers
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-12 border-t border-border">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2">Arduino Assistant Coding</h3>
-            <p className="text-sm text-muted-foreground">Created by IOT4YOU2 • Compatible with Arduino IDE</p>
+      <footer className="container mx-auto px-4 py-12 border-t border-border/50">
+        <div className="glass-effect rounded-2xl p-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Arduino Assistant Coding</h3>
+              <p className="text-sm text-foreground/70">Empowering developers to stay ahead in the AI revolution</p>
+              <p className="text-xs text-foreground/60 mt-1">Created by IOT4YOU2 • Compatible with Arduino IDE</p>
+            </div>
+            <div className="flex gap-6">
+              <button onClick={handleTutorial} className="text-foreground/70 hover:text-primary transition-colors font-medium">
+                Tutorial
+              </button>
+              <button onClick={handleDownload} className="text-foreground/70 hover:text-primary transition-colors font-medium">
+                Download
+              </button>
+            </div>
           </div>
-          <div className="flex gap-6">
-            <button onClick={handleTutorial} className="text-muted-foreground hover:text-primary transition-colors">
-              Tutorial
-            </button>
-            <button onClick={handleDownload} className="text-muted-foreground hover:text-primary transition-colors">
-              Download
-            </button>
+          <div className="text-center mt-8 pt-6 border-t border-border/30">
+            <p className="text-sm text-foreground/60">© 2025 IOT4YOU2. All rights reserved. • Making technology accessible to everyone.</p>
           </div>
-        </div>
-        <div className="text-center mt-8 text-sm text-muted-foreground">
-          <p>© 2025 IOT4YOU2. All rights reserved.</p>
         </div>
       </footer>
     </div>
