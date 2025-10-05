@@ -3,6 +3,7 @@ import CodeEditor from "@/components/CodeEditor";
 import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import PricingCard from "@/components/PricingCard";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 export default function Index() {
   const downloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler.IOT4YOU2.exe";
@@ -28,7 +29,7 @@ export default function Index() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-20 pb-32">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-block bg-accent/10 text-accent px-6 py-2 rounded-full text-sm font-semibold mb-6 border border-accent/20">
+          <div className="inline-block bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-md">
             WORKS SEAMLESSLY WITH ARDUINO IDE • 100% FREE • INSTANT ACCESS
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -58,8 +59,7 @@ export default function Index() {
           <Button
             onClick={handleTutorial}
             size="lg"
-            variant="outline"
-            className="px-8 py-6 text-lg font-bold rounded-xl border-2 border-primary hover:bg-primary/10 transition-all duration-300"
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg font-bold rounded-xl shadow-lg transition-all duration-300"
           >
             Watch Tutorial
           </Button>
@@ -131,14 +131,9 @@ export default function Index() {
         <div className="max-w-4xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border-4 border-primary/20">
             <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/NITh5km9cD4"
-                title="Arduino IDE Helper Tutorial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
+              <YouTubeFacade 
+                videoId="NITh5km9cD4" 
+                title="Arduino IDE Helper Tutorial - Learn how to use the AI-powered assistant" 
               />
             </div>
           </div>
