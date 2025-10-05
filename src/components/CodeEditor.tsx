@@ -173,6 +173,28 @@ export default function CodeEditor() {
             </div>
           )}
         </div>
+
+        {/* Action Buttons */}
+        <div className="glass-effect px-6 py-4 flex items-center justify-center gap-4 border-t border-white/10">
+          <a
+            href="https://discord.gg/Q3FW3ed2Vu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+          >
+            <span className="text-base">💬</span>
+            Join us on Discord
+          </a>
+          <a
+            href="https://www.trustpilot.com/review/arduino-ide-ai.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+          >
+            <span className="text-base">⭐</span>
+            Leave a Review on Trustpilot
+          </a>
+        </div>
       </div>
     </div>
   );
