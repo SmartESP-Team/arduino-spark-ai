@@ -191,7 +191,7 @@ export default function Index() {
       <section className="container mx-auto px-4 py-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            See <span className="text-gradient">Real Growth</span> In Action
+            <span className="text-gradient">Important</span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">Select and copy the section of code you want to analyze, then click (Analyze My Code) to save and process it.    </p>
 
