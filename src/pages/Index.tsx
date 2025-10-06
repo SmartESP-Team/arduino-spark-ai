@@ -196,12 +196,7 @@ export default function Index() {
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">Watch how Arduino Assistant Coding transforms confusion into clarity—empowering you to learn, adapt, and thrive in the AI era.
         </p>
 
-         
- 
-  <p><strong>1.</strong> <span style="color: #007BFF;">Select and copy</span> the section of code you want to analyze.</p>
-  <p><strong>2.</strong> Then click <button style="background-color: #007BFF; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Analyze My Code</button> to save and process it.</p>
-
-
+    
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="glass-card rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] p-2">
