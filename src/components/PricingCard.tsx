@@ -8,6 +8,8 @@ interface PricingCardProps {
   buttonAction: () => void;
   isSoldOut?: boolean;
   isPrimary?: boolean;
+  secondaryButtonText?: string;
+  secondaryButtonAction?: () => void;
 }
 
 export default function PricingCard({
@@ -18,6 +20,8 @@ export default function PricingCard({
   buttonAction,
   isSoldOut = false,
   isPrimary = false,
+  secondaryButtonText,
+  secondaryButtonAction,
 }: PricingCardProps) {
   return (
     <div
@@ -61,19 +65,31 @@ export default function PricingCard({
         ))}
       </ul>
 
-      <Button
-        onClick={buttonAction}
-        disabled={isSoldOut}
-        className={`w-full py-6 text-lg font-bold rounded-xl transition-all duration-300 ${
-          isPrimary && !isSoldOut
-            ? "bg-primary hover:bg-primary/90 text-white shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-elevated)] hover:scale-105"
-            : isSoldOut
-            ? "bg-muted text-muted-foreground cursor-not-allowed"
-            : "bg-secondary hover:bg-secondary/90 text-white"
-        }`}
-      >
-        {buttonText}
-      </Button>
+      <div className="space-y-3">
+        <Button
+          onClick={buttonAction}
+          disabled={isSoldOut}
+          className={`w-full py-6 text-lg font-bold rounded-xl transition-all duration-300 ${
+            isPrimary && !isSoldOut
+              ? "bg-primary hover:bg-primary/90 text-white shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-elevated)] hover:scale-105"
+              : isSoldOut
+              ? "bg-muted text-muted-foreground cursor-not-allowed"
+              : "bg-secondary hover:bg-secondary/90 text-white"
+          }`}
+        >
+          {buttonText}
+        </Button>
+        
+        {secondaryButtonText && secondaryButtonAction && (
+          <Button
+            onClick={secondaryButtonAction}
+            variant="outline"
+            className="w-full py-4 text-sm font-semibold rounded-xl border-2 border-primary/30 hover:border-primary bg-background/50 hover:bg-background/80 text-foreground transition-all duration-300"
+          >
+            {secondaryButtonText}
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

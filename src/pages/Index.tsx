@@ -1,4 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { toast } from "sonner";
 import CodeEditor from "@/components/CodeEditor";
 import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -7,7 +11,30 @@ import YouTubeFacade from "@/components/YouTubeFacade";
 
 export default function Index() {
   const downloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler.IOT4YOU2.exe";
+  const proDownloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler_Pro.IOT4YOU2.exe";
   const tutorialUrl = "https://www.youtube.com/watch?v=NITh5km9cD4";
+
+  const [showTesterDialog, setShowTesterDialog] = useState(false);
+  const [testerId, setTesterId] = useState("");
+
+  // Valid tester IDs
+  const validTesterIds = [
+    "TESTER-2025-001",
+    "TESTER-2025-002",
+    "TESTER-2025-003",
+    "TESTER-2025-004",
+    "TESTER-2025-005",
+    "TESTER-2025-006",
+    "TESTER-2025-007",
+    "TESTER-2025-008",
+    "TESTER-2025-009",
+    "TESTER-2025-010",
+    "TESTER-2025-011",
+    "TESTER-2025-012",
+    "TESTER-2025-013",
+    "TESTER-2025-014",
+    "TESTER-2025-015",
+  ];
 
   const handleDownload = () => {
     window.open(downloadUrl, "_blank");
@@ -15,6 +42,17 @@ export default function Index() {
 
   const handleTutorial = () => {
     window.open(tutorialUrl, "_blank");
+  };
+
+  const handleTesterIdSubmit = () => {
+    if (validTesterIds.includes(testerId.trim())) {
+      toast.success("Valid Tester ID! Starting download...");
+      window.open(proDownloadUrl, "_blank");
+      setShowTesterDialog(false);
+      setTesterId("");
+    } else {
+      toast.error("Invalid Tester ID. Please check and try again.");
+    }
   };
 
   return (
@@ -201,7 +239,7 @@ export default function Index() {
           />
           <PricingCard
             title="Premium"
-            price="$10"
+            price="$2/month"
             features={[
               "Everything in Free +",
               "Priority email support",
@@ -215,6 +253,8 @@ export default function Index() {
             buttonText="Sold Out"
             buttonAction={() => {}}
             isSoldOut={true}
+            secondaryButtonText="I have a Tester ID"
+            secondaryButtonAction={() => setShowTesterDialog(true)}
           />
         </div>
         <div className="text-center mt-8 text-sm text-muted-foreground">
@@ -287,6 +327,50 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Tester ID Dialog */}
+      <Dialog open={showTesterDialog} onOpenChange={setShowTesterDialog}>
+        <DialogContent className="glass-card border-primary/20">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-foreground">Enter Tester ID</DialogTitle>
+            <DialogDescription className="text-foreground/70">
+              Enter your valid tester ID to download the Premium version
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 pt-4">
+            <Input
+              type="text"
+              placeholder="TESTER-2025-XXX"
+              value={testerId}
+              onChange={(e) => setTesterId(e.target.value)}
+              className="glass-effect border-primary/30 focus:border-primary"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleTesterIdSubmit();
+                }
+              }}
+            />
+            <div className="flex gap-3">
+              <Button
+                onClick={handleTesterIdSubmit}
+                className="flex-1 bg-primary hover:bg-primary/90 text-white"
+              >
+                Verify & Download
+              </Button>
+              <Button
+                onClick={() => {
+                  setShowTesterDialog(false);
+                  setTesterId("");
+                }}
+                variant="outline"
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-12 border-t border-border/50">
