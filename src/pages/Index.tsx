@@ -194,9 +194,14 @@ export default function Index() {
             See <span className="text-gradient">Real Growth</span> In Action
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">Watch how Arduino Assistant Coding transforms confusion into clarity—empowering you to learn, adapt, and thrive in the AI era.
-
-
         </p>
+
+          <div style="border: 2px solid #007BFF; padding: 15px; border-radius: 8px; background-color: #E9F5FF; color: #003366; font-family: Arial, sans-serif; margin: 20px 0;">
+ 
+  <p><strong>1.</strong> <span style="color: #007BFF;">Select and copy</span> the section of code you want to analyze.</p>
+  <p><strong>2.</strong> Then click <button style="background-color: #007BFF; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Analyze My Code</button> to save and process it.</p>
+</div>
+
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="glass-card rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] p-2">
@@ -218,11 +223,11 @@ export default function Index() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <PricingCard title="Free Forever" price="$0" features={["Full Arduino IDE integration", "AI-powered bug detection & fixes", "Real-time code analysis & optimization", "Expert-level explanations", "Comprehensive bug history tracking", "Pre-configured Google Gemini API key", "Lifetime access with no hidden fees", "Quick email registration", "Windows compatible", "Internet connection required"]} buttonText="Download Free Now" buttonAction={handleDownload} isPrimary={true} />
-          <PricingCard title="Premium" price="$2/month" features={["Everything in Free +", "Priority email support", "Advanced code optimization algorithms", "Extended bug history (unlimited)", "Custom API key integration options", "Early access to new features", "Advanced debugging tools", "Code performance profiling"]} buttonText="Sold Out" buttonAction={() => {}} isSoldOut={true} secondaryButtonText="I have a Tester ID" secondaryButtonAction={() => setShowTesterDialog(true)} />
+          <PricingCard title="Free Forever" price="$0" features={["Full Arduino IDE integration", "AI-powered bug detection & fixes", "Real-time code analysis & optimization", "Expert-level explanations", "Comprehensive bug history tracking", "Pre-configured Google Gemini API key", "Lifetime access with no hidden fees", "Windows compatible 8/10/11 and macOS"]} buttonText="Download Free Now" buttonAction={handleDownload} isPrimary={true} />
+          <PricingCard title="Premium" price="$5/month" features={["Everything in Free +", "Priority email support", "Advanced code optimization algorithms", "Extended bug history (unlimited)", "Custom API key integration options", "Early 140+ sensors library for free", "Advanced debugging tools + youtube integrated to sensors "]} buttonText="Sold Out" buttonAction={() => {}} isSoldOut={true} secondaryButtonText="I have a Tester ID" secondaryButtonAction={() => setShowTesterDialog(true)} />
         </div>
         <div className="text-center mt-8 text-sm text-muted-foreground">
-          <p>✓ Windows Compatible • ✓ Works with Arduino IDE • ✓ Instant Download • ✓ Internet Connection Required</p>
+          <p>✓ Windows Compatible • ✓ Works with Arduino IDE • ✓ Instant Download</p>
           <p className="mt-2">Created by IOT4YOU2 • Trusted by developers worldwide</p>
         </div>
       </section>
