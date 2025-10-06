@@ -78,7 +78,7 @@ export default function Index() {
               Join Discord
             </Button>
             <Button
-              onClick={() => window.open('https://example.com/reviews', '_blank')}
+              onClick={() => window.open('https://www.trustpilot.com/review/arduino-ide-ai.vercel.app', '_blank')}
               size="sm"
               className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 font-semibold shadow-lg"
             >
