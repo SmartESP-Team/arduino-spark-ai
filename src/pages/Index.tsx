@@ -156,11 +156,7 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">See It</span> <span className="text-gradient">In Action</span>
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">Real screenshots from Arduino Assistant Coding. This is exactly what you'll experience—AI-powered analysis, component browsing, and intelligent debugging built right into your workflow.
-
-
-
-Select and copy the section of code you want to analyze, then click "Analyze My Code" to save and process it.</p>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">Real screenshots from Arduino Assistant Coding. This is exactly what you'll experience—AI-powered analysis, component browsing, and intelligent debugging built right into your workflow. </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
