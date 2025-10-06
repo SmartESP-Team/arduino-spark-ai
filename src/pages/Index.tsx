@@ -19,21 +19,21 @@ export default function Index() {
 
   // Valid tester IDs
   const validTesterIds = [
-    "TESTER-2025-001",
-    "TESTER-2025-002",
-    "TESTER-2025-003",
-    "TESTER-2025-004",
-    "TESTER-2025-005",
-    "TESTER-2025-006",
-    "TESTER-2025-007",
-    "TESTER-2025-008",
-    "TESTER-2025-009",
-    "TESTER-2025-010",
-    "TESTER-2025-011",
-    "TESTER-2025-012",
-    "TESTER-2025-013",
-    "TESTER-2025-014",
-    "TESTER-2025-015",
+    "TESTER-2025-0e01",
+    "TESTER-2025-0za02",
+    "TESTER-2025-0a03",
+    "TESTER-2025-0po04",
+    "TESTER-2025-00dd5",
+    "TESTER-2025-00ee6",
+    "TESTER-2025-00sq7",
+    "TESTER-2025-00bv8",
+    "TESTER-2025-00vb9",
+    "TESTER-2025-0dx10",
+    "TESTER-2025-01xs1",
+    "TESTER-2025-01aw2",
+    "TESTER-2025-01oo3",
+    "TESTER-2025-0az14",
+    "TESTER-2025-01az5",
   ];
 
   const handleDownload = () => {
