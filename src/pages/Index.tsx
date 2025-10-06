@@ -16,7 +16,7 @@ import screenshotAnalyzer from "@/assets/screenshot-code-analyzer.png";
 export default function Index() {
   const downloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler.IOT4YOU2.exe";
   const proDownloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler_Pro.IOT4YOU2.exe";
-  const tutorialUrl = "https://www.youtube.com/watch?v=NITh5km9cD4";
+  const tutorialUrl = "https://www.youtube.com/watch?v=010Wn18qU7o";
 
   const [showTesterDialog, setShowTesterDialog] = useState(false);
   const [testerId, setTesterId] = useState("");
