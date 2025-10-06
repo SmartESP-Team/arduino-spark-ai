@@ -191,7 +191,7 @@ export default function Index() {
       <section className="container mx-auto px-4 py-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            See <span className="text-gradient">Real Growth(co</span> In Action
+            See <span className="text-gradient">Real Growth</span> In Action
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Watch how Arduino Assistant Coding transforms confusion into clarity—empowering you to learn, adapt, and thrive in the AI era.
