@@ -286,7 +286,7 @@ export default function Index() {
           <div className="glass-card rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] p-2">
             <div className="aspect-video rounded-2xl overflow-hidden">
               <YouTubeFacade 
-                videoId="NITh5km9cD4" 
+                videoId="010Wn18qU7o" 
                 title="Arduino IDE Helper Tutorial - Learn how to use the AI-powered assistant" 
               />
             </div>
