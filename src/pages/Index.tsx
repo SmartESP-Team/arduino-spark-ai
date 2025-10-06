@@ -193,8 +193,7 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             See <span className="text-gradient">Real Growth</span> In Action
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">Watch how Arduino Assistant Coding transforms confusion into clarity—empowering you to learn, adapt, and thrive in the AI era.
-        </p>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">Select and copy the section of code you want to analyze, then click (Analyze My Code) to save and process it.    </p>
 
     
         </div>
