@@ -19,16 +19,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    /* Arduino teal as primary - vibrant */
-    --primary: 183 100% 35%;
+    /* Arduino teal as primary - MORE vibrant for higher contrast */
+    --primary: 183 100% 45%;
     --primary-foreground: 0 0% 100%;
     
-    /* Bright blue accent */
-    --secondary: 210 100% 55%;
+    /* Brighter blue accent for better visibility */
+    --secondary: 210 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Vibrant green for success/growth */
-    --accent: 142 76% 48%;
+    /* More vibrant green for success/growth */
+    --accent: 142 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --muted: 220 20% 92%;
@@ -43,22 +43,22 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* iOS-inspired gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 55%) 0%, hsl(183 100% 35%) 100%);
-    --gradient-mesh: radial-gradient(at 0% 0%, hsl(210 100% 70% / 0.3) 0px, transparent 50%),
-                      radial-gradient(at 100% 0%, hsl(183 100% 60% / 0.3) 0px, transparent 50%),
-                      radial-gradient(at 100% 100%, hsl(142 76% 60% / 0.2) 0px, transparent 50%),
-                      radial-gradient(at 0% 100%, hsl(210 100% 60% / 0.2) 0px, transparent 50%);
+    /* iOS-inspired gradients - HIGHER contrast */
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 60%) 0%, hsl(183 100% 45%) 100%);
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(210 100% 70% / 0.4) 0px, transparent 50%),
+                      radial-gradient(at 100% 0%, hsl(183 100% 60% / 0.4) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsl(142 80% 60% / 0.3) 0px, transparent 50%),
+                      radial-gradient(at 0% 100%, hsl(210 100% 60% / 0.3) 0px, transparent 50%);
     
     /* Glass effects */
     --glass-bg: 0 0% 100% / 0.7;
     --glass-border: 0 0% 100% / 0.2;
     --glass-shadow: 0 8px 32px 0 hsl(220 20% 10% / 0.1);
     
-    /* Elevated shadows for depth */
-    --shadow-glow: 0 0 60px hsl(183 100% 35% / 0.4), 0 0 30px hsl(210 100% 55% / 0.2);
-    --shadow-card: 0 8px 32px -8px hsl(220 20% 10% / 0.15);
-    --shadow-elevated: 0 20px 60px -15px hsl(220 20% 10% / 0.25);
+    /* Elevated shadows for depth - MORE pronounced */
+    --shadow-glow: 0 0 80px hsl(183 100% 45% / 0.5), 0 0 40px hsl(210 100% 60% / 0.3);
+    --shadow-card: 0 10px 40px -8px hsl(220 20% 10% / 0.2);
+    --shadow-elevated: 0 25px 70px -15px hsl(220 20% 10% / 0.3);
     
     /* Code editor colors */
     --code-bg: 220 15% 15%;
@@ -90,27 +90,35 @@ All colors MUST be HSL.
     background-clip: text;
   }
   
-  /* iOS-inspired glass morphism */
+  /* iOS-inspired glass morphism - ENHANCED */
   .glass-effect {
     background: linear-gradient(135deg, 
       hsl(var(--glass-bg)) 0%, 
-      hsl(0 0% 100% / 0.5) 100%);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+      hsl(0 0% 100% / 0.6) 100%);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
     border: 1px solid hsl(var(--glass-border));
     box-shadow: var(--glass-shadow),
-                inset 0 1px 1px 0 hsl(0 0% 100% / 0.5);
+                inset 0 1px 1px 0 hsl(0 0% 100% / 0.6);
   }
   
   .glass-card {
     background: linear-gradient(135deg, 
-      hsl(0 0% 100% / 0.8) 0%, 
-      hsl(0 0% 100% / 0.6) 100%);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid hsl(0 0% 100% / 0.3);
+      hsl(0 0% 100% / 0.85) 0%, 
+      hsl(0 0% 100% / 0.7) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.4);
     box-shadow: var(--shadow-card),
-                inset 0 1px 1px 0 hsl(0 0% 100% / 0.6);
+                inset 0 1px 1px 0 hsl(0 0% 100% / 0.7);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-card:hover {
+    border-color: hsl(183 100% 45% / 0.4);
+    box-shadow: var(--shadow-elevated),
+                inset 0 1px 1px 0 hsl(0 0% 100% / 0.8);
+    transform: translateY(-2px);
   }
   
   .glass-hero {

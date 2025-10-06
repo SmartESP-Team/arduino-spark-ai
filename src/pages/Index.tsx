@@ -8,6 +8,10 @@ import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import PricingCard from "@/components/PricingCard";
 import YouTubeFacade from "@/components/YouTubeFacade";
+import { MessageCircle, Star } from "lucide-react";
+import screenshotComponents from "@/assets/screenshot-components-browser.png";
+import screenshotAI from "@/assets/screenshot-ai-assistant.png";
+import screenshotAnalyzer from "@/assets/screenshot-code-analyzer.png";
 
 export default function Index() {
   const downloadUrl = "https://github.com/SmartESP-Team/Site_de_smart_ESP/releases/download/v1.0/arduino-ide-hepler.IOT4YOU2.exe";
@@ -57,6 +61,34 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden relative">
+      {/* Community Action Bar - Sticky at top */}
+      <div className="sticky top-0 z-50 backdrop-blur-md bg-background/90 border-b border-primary/30 shadow-lg">
+        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="text-sm font-semibold text-foreground">
+            🚀 Join <span className="text-primary">5,000+</span> developers leveling up with AI
+          </div>
+          <div className="flex gap-3">
+            <Button
+              onClick={() => window.open('https://discord.gg/your-discord-invite', '_blank')}
+              variant="outline"
+              size="sm"
+              className="glass-effect border-primary/50 hover:bg-primary/20 hover:border-primary font-semibold"
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Join Discord
+            </Button>
+            <Button
+              onClick={() => window.open('https://example.com/reviews', '_blank')}
+              size="sm"
+              className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 font-semibold shadow-lg"
+            >
+              <Star className="w-4 h-4 mr-2" />
+              Leave Review
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {/* Futuristic Glass Mesh Background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
@@ -182,6 +214,61 @@ export default function Index() {
             title="Universal Compatibility"
             description="Helps everyone from hobbyists to professionals. Whether prototyping or building production systems, Arduino Assistant Coding scales with your needs."
           />
+        </div>
+      </section>
+
+      {/* How It Works - Screenshots Section */}
+      <section className="container mx-auto px-4 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">See It</span> <span className="text-gradient">In Action</span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Real screenshots from Arduino Assistant Coding. This is exactly what you'll experience—AI-powered analysis, component browsing, and intelligent debugging built right into your workflow.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass-card p-6 rounded-3xl group">
+              <div className="mb-6 overflow-hidden rounded-xl border-2 border-primary/30 group-hover:border-primary/60 transition-all duration-300">
+                <img 
+                  src={screenshotComponents} 
+                  alt="Arduino IDE Components Browser showing XBee modules and servo motors with detailed specifications"
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">Smart Component Browser</h3>
+              <p className="text-foreground/70 leading-relaxed">Browse components with detailed specs, voltage info, and instant integration guides—all within your Arduino IDE.</p>
+            </div>
+
+            <div className="glass-card p-6 rounded-3xl group">
+              <div className="mb-6 overflow-hidden rounded-xl border-2 border-secondary/30 group-hover:border-secondary/60 transition-all duration-300">
+                <img 
+                  src={screenshotAI} 
+                  alt="Arduino AI Assistant panel showing selected components and deep analysis functionality"
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">AI-Powered Analysis</h3>
+              <p className="text-foreground/70 leading-relaxed">Select components and get instant AI analysis with context-aware instructions and optimization suggestions.</p>
+            </div>
+
+            <div className="glass-card p-6 rounded-3xl group">
+              <div className="mb-6 overflow-hidden rounded-xl border-2 border-accent/30 group-hover:border-accent/60 transition-all duration-300">
+                <img 
+                  src={screenshotAnalyzer} 
+                  alt="Arduino Code Analyzer interface showing real-time debugging and intelligent code analysis"
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">Real-Time Debugging</h3>
+              <p className="text-foreground/70 leading-relaxed">Get instant bug detection, smart solutions, and code quality improvements as you develop your Arduino projects.</p>
+            </div>
+          </div>
         </div>
       </section>
 
