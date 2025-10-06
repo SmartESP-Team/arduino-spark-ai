@@ -417,10 +417,10 @@ export default function Index() {
 
       {/* Tester ID Dialog */}
       <Dialog open={showTesterDialog} onOpenChange={setShowTesterDialog}>
-        <DialogContent className="glass-card border-primary/20">
+        <DialogContent className="bg-background border border-border shadow-xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-foreground">Enter Tester ID</DialogTitle>
-            <DialogDescription className="text-foreground/70">
+            <DialogTitle className="text-xl font-semibold text-foreground">Enter Tester ID</DialogTitle>
+            <DialogDescription className="text-muted-foreground">
               Enter your valid tester ID to download the Premium version
             </DialogDescription>
           </DialogHeader>
@@ -430,7 +430,7 @@ export default function Index() {
               placeholder="TESTER-2025-XXX"
               value={testerId}
               onChange={(e) => setTesterId(e.target.value)}
-              className="glass-effect border-primary/30 focus:border-primary"
+              className="bg-background border-input focus-visible:ring-ring"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleTesterIdSubmit();
