@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PricingCardProps {
   title: string;
@@ -23,6 +24,8 @@ export default function PricingCard({
   secondaryButtonText,
   secondaryButtonAction,
 }: PricingCardProps) {
+  const { t } = useLanguage();
+  
   return (
     <div
       className={`relative glass-card rounded-3xl p-10 transition-all duration-500 ${
@@ -33,12 +36,12 @@ export default function PricingCard({
     >
       {isSoldOut && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 glass-effect px-6 py-2 rounded-full text-sm font-bold shadow-lg text-destructive ring-2 ring-destructive/20">
-          SOLD OUT
+          {t.pricingLabels.soldOut}
         </div>
       )}
       {isPrimary && !isSoldOut && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-2 rounded-full text-sm font-bold shadow-[var(--shadow-glow)] animate-glow">
-          ⚡ MOST POPULAR
+          {t.pricingLabels.mostPopular}
         </div>
       )}
 
@@ -49,7 +52,7 @@ export default function PricingCard({
         </div>
         {price === "$0" && (
           <div className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-semibold animate-glow">
-            LIFETIME ACCESS
+            {t.pricingLabels.lifetimeAccess}
           </div>
         )}
       </div>
